@@ -84,7 +84,7 @@ describe('realo-app-backend routes', () => {
     pool.end();
   });
 
-  it('latest listings with corresponding matching filters and owners directly from model', async() => {
+  it.skip('latest listings with corresponding matching filters and owners directly from model', async() => {
     const newListing = {
       id: '123456789', 
       source: 'Zillow', 
@@ -117,7 +117,7 @@ describe('realo-app-backend routes', () => {
     ]);
   });
 
-  it('get latest timestamp from database', async() => {
+  it.skip('get latest timestamp from database', async() => {
     const newListing = {
       id: '123456789', 
       source: 'Zillow', 
