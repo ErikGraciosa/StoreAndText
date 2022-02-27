@@ -1,0 +1,105 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+a:link {
+  color: #1d3557;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #457b9d;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header {
+  padding-top: 4%;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  align-items: center;
+}
+
+hr {
+  border: 1px solid black;
+  width: 100%;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4px;
+  text-transform: uppercase;
+  font-size: 200%;
+}
+
+.subheader {
+  display: block;
+  font-size: 75%;
+  opacity: 0.8;
+  margin-top: -16px;
+}
+
+#home-links {
+  padding: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.styled-button {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid #000000;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #000000;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.styled-button:hover {
+  color: #ffffff;
+  background-color: #202020;
+}
+
+@media all and (max-width: 30em) {
+  .styled-button {
+    display: block;
+    margin: 0.4em auto;
+  }
+}
+.styled-button:hover {
+  color: #ffffff;
+  background-color: #202020;
+}
+
+@media all and (max-width: 30em) {
+    .styled-button {
+    display: block;
+    margin: 0.4em auto;
+  }
+}
+
+.bottom-links {
+  padding: 1em 1em;
+  display: inline-block;
+  font-size: medium;
+  padding-bottom: 40px;
+}

@@ -1,0 +1,37 @@
+extends _layout.pug
+
+block styles
+  include css/aboutUs.css
+
+block content
+  mixin bio(name, picture, linkedin, github)
+    .bio-card
+      img.bio-card-image(src=picture, alt=name)
+      .social-links
+        a(href=linkedin)
+          img.linkedin-image(src='https://img.icons8.com/ios/50/000000/linkedin.png', alt='linkedin')
+        a(href=github)
+          img.github-image(src='https://img.icons8.com/ios/50/000000/github.png', alt='github')
+      .bio-card-text
+        h3= name
+        block
+
+  mixin questions(answer1, answer2, answer3)
+    .questions 
+      ul
+        li #[strong Favorite Portland Neighborhood?] #{answer1}
+        br
+        li #[strong What's Your Story?] #{answer2}
+        br
+        li #[strong Coolest Part of This Project?] #{answer3}
+
+  +bio('Kevin Fiero', '/kevin.jpg', 'https://www.linkedin.com/in/kevinfiero/', 'https://github.com/kevinfiero/')
+    +questions('Pearl', 'I worked in the supply chain and software industry for several years since college. My experience as a scrum master and automating boring tasks with ad hoc scripts piqued my interest in becoming a full time software engineer. On my free time I like to 3D print, hike, and rock climb.', 'Scraping Zillow and getting my IP address blacklisted for being a robot.')
+  +bio('Erik Graciosa', '/erik.jpg', 'https://www.linkedin.com/in/erikgraciosa/', 'https://github.com/ErikGraciosa')
+    +questions('Mount Tabor', 'After a career in Mechanical Engineering working on projects in automation inkjet printing, 3D printing, material handling, and labgrown-diamonds, now pursuing the new problem domain of Software Engineering.', 'Server side rendering using PUG and cookie management with redirects using default html form functionalities as well as the express endpoint middlewear to write to a postgres database were the highlights of this project.')
+  +bio('Jeff Irvine', '/jeff.jpg', 'https://www.linkedin.com/in/irvinejeff/', 'https://github.com/jeffIrvine')
+    +questions('Woodlawn', 'Most recently I was an operations manager and co-founder of a small start up. After so many years of sales and management I was very tired of the hypebeast sales pitches and metrics over people style of people management. (If you could go ahead and just do your job... that\'d be great.) Enter software development, people centered with a focus on communication and problem solving.', 'Cheerio, scraping Zillow, and PugPugPug')
+  +bio('Sydney James', '/sydney.jpg', 'https://www.linkedin.com/in/sydjames/', 'https://github.com/scjam')
+    +questions('Overlook', 'In my past life I worked in the wine industry and in hospitality as a sales and event manager. I found coding through a desire to solve problems and challenge myself to do something HARD. In my free time I\'m an avid home cook, house project-doer, and not-musically-inclined karaoke queen.', 'Successful scraping and becoming a pug convert.') 
+  nav.bottom-links
+    a(href="/") Home

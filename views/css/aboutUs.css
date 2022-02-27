@@ -1,0 +1,53 @@
+.bio-card {
+  width: 60%;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: repeat(4, 100px);
+  overflow: hidden;
+  align-items: center;
+  margin-top: 4em;
+}
+
+.bio-card-image {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  border-radius: 50%;
+  max-width: 200px;
+  height: 200px;
+  float: left;
+  display: grid;
+  overflow: hidden;
+  justify-self: center;
+  margin-top: 0.8em;
+}
+
+.social-links {
+  grid-column-start: 1;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  margin-top: 15px;
+  justify-self: center;
+  float: left;
+}
+
+.bio-card-text {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+h3 {
+  font-size: 150%;
+}
+
+.questions {
+  font-size: 110%;
+  font-weight: normal;
+}

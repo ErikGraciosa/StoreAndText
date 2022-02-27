@@ -1,0 +1,25 @@
+extends _layout.pug
+
+block styles
+  include css/loginSignUp.css
+
+block content
+  div#sign-up-info Sign up with Realo to access the home filter builder and enable text messages based on matching filters.
+  br
+  form#sign-up-form(action="/api/v1/auth/signup" method="POST")
+    input(type="text", name="name", value="", placeholder="Name" required)
+    br
+    input(type="text", name="email", value="", placeholder="Email" required)
+    br
+    input(type="password", name="password", value="", placeholder="Password" required)
+    br
+    input(type="text", name="phoneNumber", value="", placeholder="Phone Number" required)
+    br
+    select(name="carrier")
+      each carrier in carriers
+        option(value=carrier)= carrier
+    br
+    button#submit-button.styled-button Submit
+
+  nav.bottom-links
+    a(href="/about-us") About Us

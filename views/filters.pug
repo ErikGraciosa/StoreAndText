@@ -1,0 +1,71 @@
+extends _layout.pug
+
+block styles
+  include css/filters.css
+
+block content  
+  h3 Add A New Filter
+  form.add-filter-form(action="/api/v1/filter" method="POST")
+    div#filter-name
+      input(type="text" name="filterName" placeholder="name of filter" required)
+    div#filter-price
+      input(type="number" name="priceMin" placeholder="minimum price" required)
+      input(type="number" name="priceMax" placeholder="maximum price" required)
+    div#filter-square-feet
+      input(type="number" name="squareFeetMin" placeholder="minimum sqft" required)
+      input(type="number" name="squareFeetMax" placeholder="maximum sqft" required)
+    mixin numbers(name)
+      select(name=name)
+        each val in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+          option(value=val)= val
+    div#filter-beds
+      label minimum beds 
+        +numbers('bedMin')
+      br
+      label maximum beds 
+        +numbers('bedMax')
+    div#filter-baths
+      label minimum baths 
+        +numbers('bathMin')
+      br
+      label maximum baths 
+        +numbers('bathMax')
+    button#filter-submit-button.styled-button Add Filter
+  
+  h3 Saved Filters
+    table(style='width:100%', border='1')
+      tr
+        th Name
+        th Min. Price
+        th Max. Price
+        th Min. Sqft
+        th Max. Sqft
+        th Min. Bed
+        th Max. Bed
+        th Min. Bath
+        th Max. Bath
+        th
+      each filter in filters  
+        tr
+          td #{filter.filterName}
+          td $#{filter.priceMin}
+          td $#{filter.priceMax}
+          td #{filter.squareFeetMin} sqft
+          td #{filter.squareFeetMax} sqft
+          td #{filter.bedMin} bd
+          td #{filter.bedMax} bd
+          td #{filter.bathMin} ba
+          td #{filter.bathMax} ba
+          td
+            button.delete-button.styled-button(id=filter.filterId) Delete
+  nav.bottom-links
+    a(href="/") Home 
+    br
+    a(href="/about-us") About Us
+
+  button.styled-button#logout-button Logout
+
+  script
+    include js/filters.js
+    include js/buttonLogic.js
+  

@@ -1,0 +1,13 @@
+extends _layout.pug
+
+block styles
+  include css/loginSignUp.css
+
+block content
+  form#login-form(action="/api/v1/auth/login" method="POST")
+    input(type="text", name="email", value="", placeholder="email" required)
+    br
+    input(type="password", name="password", value="", placeholder="password" required)
+    br
+    br
+    button.styled-button#login-submit-button submit
