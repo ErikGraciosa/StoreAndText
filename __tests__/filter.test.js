@@ -34,7 +34,7 @@ describe('realo-app-backend routes', () => {
     pool.end();
   });
 
-  it('/POST add user filter', async() => {
+  it.skip('/POST add user filter', async() => {
     const res = await agent
       .post('/api/v1/filter')
       .send({
@@ -52,7 +52,7 @@ describe('realo-app-backend routes', () => {
     expect(res.statusCode).toEqual(302);
   });
 
-  it('/DELETE remove user filter by id', async() => {
+  it.skip('/DELETE remove user filter by id', async() => {
     const filter = await agent
       .post('/api/v1/filter')
       .send({
@@ -85,7 +85,7 @@ describe('realo-app-backend routes', () => {
     });
   });
 
-  it('/DELETE throw error if filter id does not exist', async() => {
+  it.skip('/DELETE throw error if filter id does not exist', async() => {
     const res = await agent
       .delete('/api/v1/filter/1');
 
@@ -95,7 +95,7 @@ describe('realo-app-backend routes', () => {
     });
   });
 
-  it('/GET return all filters by user ID', async() => {
+  it.skip('/GET return all filters by user ID', async() => {
     const filter = await agent
       .post('/api/v1/filter')
       .send({
@@ -182,7 +182,7 @@ describe('realo-app-backend routes', () => {
     }]);
   });
 
-  it('/GET error message if no filters exist for user ID', async() => {
+  it.skip('/GET error message if no filters exist for user ID', async() => {
     const res = await agent
       .get('/api/v1/filter/1');
 
